@@ -291,5 +291,28 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAckpaYZcpu_zBlJobj32cQuZlx87TBnhk",
+        authDomain: "saving-for-life.firebaseapp.com",
+        projectId: "saving-for-life",
+        storageBucket: "saving-for-life.appspot.com",
+        messagingSenderId: "629355425140",
+        appId: "1:629355425140:web:90ffd039ef96e5f7a75021",
+        measurementId: "G-T0XM3WXD2Y"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>

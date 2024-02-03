@@ -1,0 +1,49 @@
+@import "../styles/imports";
+
+.ul {
+  list-style: none;
+  padding-inline-start: 0;
+  font-size: $fs-sm;
+  position: relative;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: $fs-lg;
+      font-weight: $fw-medium;
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    width: 2px;
+    height: 100%;
+    border-left: 2px dashed $theme-lime;
+  }
+}
+
+.circle {
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: $theme;
+  font-weight: $fw-bold;
+  color: $white;
+  border-radius: 50%;
+  margin-right: $item-spacing;
+}

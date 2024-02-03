@@ -1,0 +1,66 @@
+@import "../styles/imports";
+
+.buttonLink {
+  display: inline-block;
+  background-color: transparent;
+  position: relative;
+  left: -8px;
+  -webkit-user-drag: none;
+  overflow: hidden;
+  user-select: none;
+  vertical-align: middle;
+  font-weight: $fw-medium;
+  font-size: $fs-sm;
+  min-width: 64px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: $link-normal;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  min-width: fit-content;
+  cursor: pointer;
+
+  &:active {
+    background-color: rgba(25, 118, 210, 0.1);
+    color: $link-active;
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    background-color: $theme;
+    animation: fadingIn 0.4s ease-out;
+    animation-play-state: paused;
+    opacity: 0.2;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transform: scale(2);
+  }
+}
+
+.buttonLink:hover,
+:global(.card-link):hover .buttonLink {
+  span {
+    animation-play-state: running;
+    display: inline;
+  }
+}
+
+@keyframes fadingIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(2);
+  }
+}

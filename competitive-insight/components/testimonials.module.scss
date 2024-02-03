@@ -1,0 +1,114 @@
+@import "../styles/imports";
+
+.card {
+  background-color: $white;
+  border-radius: 2px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  padding: $item-spacing-lg;
+  text-align: center;
+}
+
+.cardContent {
+  padding-top: $item-spacing-lg;
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 20px;
+
+  @include media-breakpoint-down(md) {
+    padding: $page-padding-md;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: $page-padding-xs;
+  }
+}
+
+.quotesLeft {
+  display: inline;
+  margin-right: $item-spacing-sm;
+  color: $theme-dark;
+}
+
+.quotesRight {
+  display: inline;
+  margin-left: $item-spacing-sm;
+  color: $theme-dark;
+}
+
+.footer {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $item-spacing-md;
+  padding-top: $item-spacing-lg;
+
+  @include media-breakpoint-up(lg) {
+    border-top: 1px solid $border-dark;
+    margin-top: $item-spacing-lg;
+  }
+
+  & > div {
+    text-align: left;
+  }
+
+  & > img {
+    border-radius: 50%;
+  }
+}
+
+.person {
+  font-size: $fs-h4;
+  font-weight: $fw-bold;
+}
+
+.content {
+  display: inline;
+}
+
+.raised {
+  position: relative;
+  z-index: 10;
+  flex: 1.1;
+
+  @include media-breakpoint-up(lg) {
+    transform: scale(1.1);
+    flex: 1;
+  }
+}
+
+.left {
+  flex: 1.1;
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      padding-right: 50px;
+    }
+  }
+}
+
+.right {
+  flex: 1.1;
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      padding-left: 50px;
+    }
+  }
+}
+
+.testimonialList {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    gap: $item-spacing-md;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../styles/imports";
+
+.item {
+  span {
+    font-weight: $fw-bold;
+  }
+  &::marker {
+    color: $theme-extra-dark;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: $item-spacing-lg;
+  row-gap: $item-spacing;
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: 1fr;
+    column-gap: $item-spacing-mobile-lg;
+    row-gap: $item-spacing-mobile;
+  }
+}

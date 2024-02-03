@@ -1,0 +1,211 @@
+@import "../../styles/imports";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: $border-radius;
+  padding: $page-padding-horizontal $item-spacing-md;
+
+  @include media-breakpoint-between(sm, md) {
+    padding: $page-padding-md-horizontal $section-padding-horizontal-xs;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 0;
+  }
+
+  li:empty {
+    padding: 0 !important;
+  }
+
+  h2,
+  h3 {
+    padding-top: $item-spacing-sm;
+
+    @include media-breakpoint-down(sm) {
+      font-size: $fs-normal;
+      padding: $item-spacing-xs 0;
+    }
+  }
+
+  h2 {
+    font-size: $fs-h3;
+
+    @include media-breakpoint-between(sm, md) {
+      font-size: $fs-h4;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding-top: $item-spacing-lg;
+    }
+  }
+
+  h3 {
+    font-size: $fs-h4;
+    line-height: normal;
+
+    @include media-breakpoint-down(xs) {
+      font-size: $fs-lg;
+    }
+  }
+
+  h4 {
+    font-size: $fs-normal;
+    word-break: break-word;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    @include media-breakpoint-down(xs) {
+      flex-wrap: wrap;
+
+      li:first-of-type {
+        flex: 100%;
+        font-weight: $fw-bold;
+        background-color: $white;
+      }
+    }
+
+    li {
+      span,
+      h4 {
+        display: inline-block;
+      }
+
+      @include media-breakpoint-down(xs) {
+        text-align: center;
+        justify-content: center;
+      }
+
+      &:first-of-type {
+        width: 300px;
+        min-width: 300px;
+        padding-left: 0;
+
+        @include media-breakpoint-down(md) {
+          width: 150px;
+          min-width: 150px;
+        }
+      }
+
+      &:not(:first-of-type) {
+        flex: 1;
+      }
+
+      &:nth-of-type(even) {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.headerRow li {
+  padding: 0 $item-spacing-xs;
+
+  &:not(:first-of-type) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  @include media-breakpoint-down(xs) {
+    &:first-of-type {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+  }
+
+  p {
+    font-weight: $fw-bold;
+    line-height: normal;
+
+    @include media-breakpoint-up(md) {
+      font-size: $fs-lg;
+      padding-bottom: $item-spacing;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: $fs-sm;
+      padding-bottom: $item-spacing-sm;
+    }
+  }
+}
+
+.row {
+  li {
+    display: flex;
+    align-items: center;
+    padding: $item-spacing-xs $item-spacing;
+
+    @include media-breakpoint-down(sm) {
+      padding: $item-spacing-xs;
+
+      span {
+        font-size: $fs-sm;
+      }
+    }
+  }
+
+  & + .row {
+    li {
+      border-top: 1px solid rgb(0, 0, 0, 0.2);
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .row li {
+    border-top: 1px solid rgb(0, 0, 0, 0.2);
+  }
+}
+
+.lastRow li {
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+.actionRow li {
+  padding: 0 $item-spacing $item-spacing $item-spacing;
+}
+
+.row + .actionRow {
+  li {
+    padding-top: $item-spacing-lg;
+
+    @include media-breakpoint-down(xs) {
+      padding-top: $item-spacing;
+    }
+  }
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: $item-spacing;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+
+    @include media-breakpoint-down(sm) {
+      margin-right: $item-spacing-xs;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../styles/imports";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $content-max-width;
+  flex: 100%;
+  gap: $item-spacing-lg;
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-left: $item-spacing-mobile;
+    padding-right: $item-spacing-mobile;
+    flex-direction: column;
+    gap: $item-spacing-mobile-lg;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: $item-spacing-mobile;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  a,
+  button {
+    padding: 0.125rem 0;
+    display: block;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    color: $link-normal;
+    cursor: pointer;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+}

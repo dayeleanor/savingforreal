@@ -1,0 +1,135 @@
+@import "../styles/imports";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px -1px rgb(0 0 0 / 5%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
+    0px 1px 3px 0px rgb(0 0 0 / 12%);
+  padding: $item-spacing-lg 1.5rem;
+
+  @include media-breakpoint-down(xs) {
+    padding: $item-spacing $item-spacing;
+  }
+
+  h3 {
+    padding-bottom: $item-spacing;
+  }
+
+  p {
+    margin-bottom: $item-spacing;
+  }
+
+  footer {
+    margin: auto 0 0 0;
+    padding: $item-spacing 0 0 0;
+    width: 100%;
+  }
+
+  &.hidden p {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.cardIcon {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin-bottom: $item-spacing;
+
+  @include media-breakpoint-down(xs) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.arrow {
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  margin-top: $item-spacing-sm;
+
+  cursor: pointer;
+  line-height: 15px;
+
+  &.up svg {
+    transform: rotate(180deg);
+  }
+
+  path {
+    fill: $button-normal;
+  }
+
+  &:hover {
+    path {
+      fill: $button-hover;
+    }
+  }
+}
+
+.cardList {
+  list-style-type: none;
+  display: grid;
+  gap: $item-spacing-lg;
+  margin: 0;
+  padding: 0;
+
+  @include media-breakpoint-down(md) {
+    gap: $item-spacing-mobile-lg;
+  }
+
+  h3 {
+    margin-block-end: 0;
+  }
+
+  &.noBorders .card {
+    border: none;
+    box-shadow: none;
+    background: none;
+    padding: $item-spacing;
+  }
+
+  &.align-center .card {
+    align-items: center;
+    text-align: center;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &.align-center .card p {
+      margin-block-start: $item-spacing-mobile-xs;
+    }
+
+    &.align-left .card {
+      svg {
+        margin-bottom: 0;
+        margin-right: $item-spacing;
+      }
+      h3 {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.noBorders {
+    gap: $item-spacing;
+
+    @include media-breakpoint-down(xs) {
+      gap: $item-spacing-mobile;
+    }
+  }
+
+  @for $i from 1 through 8 {
+    @include media-breakpoint-up(md) {
+      &.col#{$i} {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  }
+}

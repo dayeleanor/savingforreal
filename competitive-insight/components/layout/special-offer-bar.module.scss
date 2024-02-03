@@ -1,0 +1,33 @@
+@import "../../styles/imports";
+
+.bar {
+  background-color: $page-background-medium;
+  padding: 0.5rem $page-padding-horizontal;
+
+  @include media-breakpoint-down(md) {
+    padding: 0.5rem $page-padding-md-horizontal;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 0.5rem $page-padding-xs-horizontal;
+  }
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $page-max-width;
+
+  a {
+    display: inline-block;
+    margin-left: $item-spacing;
+  }
+
+  p {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: $fw-bold;
+  }
+}

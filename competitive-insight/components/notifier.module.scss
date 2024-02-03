@@ -1,0 +1,42 @@
+@import "../styles/imports";
+
+.notifier {
+  background-color: $white;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  padding: $item-spacing;
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px -1px rgb(0 0 0 / 5%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
+    0px 1px 3px 0px rgb(0 0 0 / 12%);
+  min-width: 200px;
+  text-align: center;
+  z-index: 100;
+  user-select: none;
+  animation: fadeIn 0.2s ease-out, fadeOut 0.2s 2s ease-out forwards;
+  animation-play-state: running;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+}

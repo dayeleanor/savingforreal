@@ -1,0 +1,77 @@
+@import "../styles/imports";
+
+.buttonLink {
+  text-align: center;
+  background-color: transparent;
+  -webkit-user-drag: none;
+  overflow: hidden;
+  user-select: none;
+  font-weight: $fw-medium;
+  border-radius: $border-radius;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: $white;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  min-width: fit-content;
+  cursor: pointer;
+}
+
+.small {
+  font-size: $fs-sm;
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+.normal {
+  font-size: $fs-normal;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.large {
+  display: block;
+  font-size: $fs-lg;
+  padding: $item-spacing-sm $item-spacing;
+
+  @include media-breakpoint-up(md) {
+    min-width: 200px;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    font-size: $fs-normal;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: $fs-sm;
+    padding: $item-spacing-xs;
+  }
+}
+
+.primary {
+  background-color: $primary-button-normal;
+
+  &:active {
+    background-color: $primary-button-active;
+    color: $white;
+  }
+
+  &:hover:not(:active) {
+    background-color: $primary-button-hover;
+    color: $white;
+  }
+}
+
+.secondary {
+  background-color: $button-normal;
+
+  &:active {
+    background-color: $button-active;
+    color: $white;
+  }
+
+  &:hover:not(:active) {
+    background-color: $button-hover;
+    color: $white;
+  }
+}

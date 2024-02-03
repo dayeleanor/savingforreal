@@ -1,0 +1,66 @@
+@import "../styles/imports";
+
+.summary {
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  padding: $item-spacing 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    transform: rotate(0deg);
+    transition: all ease-in-out 250ms;
+  }
+
+  svg path {
+    fill: $link-normal;
+  }
+
+  h4 {
+    font-weight: $fw-medium;
+    color: $link-normal;
+  }
+
+  &:hover {
+    h4 {
+      color: $link-hover;
+    }
+
+    svg path {
+      fill: $link-hover;
+    }
+  }
+
+  &::marker {
+    content: "";
+  }
+}
+
+.content {
+  padding: $item-spacing 0;
+}
+
+.details {
+  width: 100%;
+
+  &[open] .summary svg {
+    transform: rotate(-180deg);
+  }
+}
+
+.accordionList {
+  width: 100%;
+
+  details:first-of-type summary {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  details:last-of-type:not([open]) summary {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../styles/imports";
+
+.subscribeCard {
+  background-color: $theme-lime-light;
+  padding: $item-spacing-lg;
+  border-radius: $border-radius;
+  max-width: $content-max-width;
+  margin: auto;
+
+  form {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.tagLine {
+  margin-top: 0;
+  margin-bottom: $item-spacing;
+  text-align: center;
+  font-size: $fs-lg;
+}
+
+.textfield {
+  border-radius: $border-radius;
+  background-color: $white;
+  margin-right: $item-spacing-sm;
+  border: none;
+  outline: none;
+  padding: 15px 10px;
+  flex: 1;
+}
+
+.submitButton {
+  border: none;
+  padding: 0 $item-spacing-lg;
+  background-color: $button-normal;
+  color: $white;
+  font-size: $fs-lg;
+  font-weight: $fw-bold;
+  cursor: pointer;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  &:active {
+    background-color: $button-active;
+  }
+}

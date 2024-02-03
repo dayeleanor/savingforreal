@@ -1,0 +1,138 @@
+@import "../styles/imports";
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  bottom: 30px;
+  padding: 6px 8px;
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: rgba(39, 54, 75, 0.1) 0 0px 15px 8px;
+  transition: opacity 251ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 167ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  visibility: hidden;
+  opacity: 0;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include media-breakpoint-up(md) {
+    left: 15px;
+    transform: translateX(-50%) scale(50%, 50%);
+
+    &.show {
+      transform: translateX(-50%) scale(100%, 100%);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    right: 0;
+    transform: translateX(0) scale(50%, 50%);
+
+    &.show {
+      transform: translateX(0) scale(100%, 100%);
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-inline-start: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+
+  span {
+    font-size: $fs-sm;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    padding: 8px 15px 8px 4px !important;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.1) !important;
+    }
+  }
+
+  svg {
+    margin-right: 4px;
+  }
+}
+
+.button {
+  outline: none;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  &:active {
+    background-color: rgba(25, 118, 210, 0.1);
+  }
+
+  &:hover path {
+    fill: $link-hover;
+  }
+
+  &:hover span {
+    animation-play-state: running;
+  }
+
+  &:not(:hover) span {
+    display: none;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    background-color: $theme;
+    animation: fadingIn 0.2s ease-out;
+    animation-play-state: paused;
+    opacity: 0.2;
+    border-radius: 50%;
+    transform: scale(1);
+  }
+}
+
+.path {
+  fill: $link-normal;
+}
+
+@keyframes fadingIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+.container {
+  position: relative;
+  color: $black;
+}

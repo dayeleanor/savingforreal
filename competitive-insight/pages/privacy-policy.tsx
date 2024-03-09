@@ -1,21 +1,25 @@
+import { HeadingBlock } from "../components/content-blocks/heading-block";
 import Layout from "../components/layout";
-import Section from "../components/layout/section";
+import Section from "../internal/components/section";
 
 const PrivacyPolicyPage: React.FC = () => (
   <Layout title="Privacy Policy">
+    <HeadingBlock heading="Privacy Policy" centered={false}>
+      <p>Effective Date: 4/12/23</p>
+    </HeadingBlock>
     <Section bgColor="white">
-      <Section.Header title="Privacy Policy">
-        <p>Effective Date: 4/12/23</p>
-        <h3>1. Introduction</h3>
-        <p>
-          Welcome to Competitive Insight Marketing Agency (&ldquo;we&rdquo;,
-          &ldquo;us&rdquo;, or &ldquo;our&rdquo;). This Privacy Policy is designed to help
-          you understand how we collect, use, disclose, and safeguard your personal
-          information. By using our website, services, or engaging with us, you consent to
-          the practices described in this Privacy Policy.
-        </p>
-      </Section.Header>
-      <Section.Rows>
+      <Section.GridContainer>
+        <div>
+          <h3>1. Introduction</h3>
+
+          <p>
+            Welcome to Competitive Insight Marketing Agency (&ldquo;we&rdquo;,
+            &ldquo;us&rdquo;, or &ldquo;our&rdquo;). This Privacy Policy is designed to
+            help you understand how we collect, use, disclose, and safeguard your personal
+            information. By using our website, services, or engaging with us, you consent
+            to the practices described in this Privacy Policy.
+          </p>
+        </div>
         <div>
           <h3>2. Information We Collect</h3>
           <h4>2.1. Personal Information</h4>
@@ -94,7 +98,7 @@ const PrivacyPolicyPage: React.FC = () => (
             at info@competitiveinsight.io.
           </p>
         </div>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
   </Layout>
 );

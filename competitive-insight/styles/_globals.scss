@@ -4,11 +4,12 @@ header.page-header {
   position: relative;
   max-width: $page-max-width;
   margin: 0 auto;
-  padding: $page-padding;
 
   &.wide {
     max-width: $page-max-width-wide;
   }
+
+  padding: $page-padding;
 
   @include media-breakpoint-down(md) {
     padding: $page-padding-md;
@@ -16,6 +17,18 @@ header.page-header {
 
   @include media-breakpoint-down(xs) {
     padding: $page-padding-xs;
+  }
+
+  &.slim {
+    padding: $page-padding-md-vertical $page-padding-horizontal;
+
+    @include media-breakpoint-down(md) {
+      padding: $page-padding-md-vertical $page-padding-md-horizontal;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: $page-padding-xs;
+    }
   }
 
   &.no-padding {
@@ -119,6 +132,14 @@ header > h2 + p {
 
 .bg-white {
   background-color: $white;
+}
+
+.bg-light-blue {
+  background-color: #dff3ff;
+}
+
+.bg-light-green {
+  background-color: #ecfffb;
 }
 
 .bg-medium {

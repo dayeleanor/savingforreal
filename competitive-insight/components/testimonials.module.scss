@@ -17,15 +17,7 @@
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding: 40px 20px;
-
-  @include media-breakpoint-down(md) {
-    padding: $page-padding-md;
-  }
-
-  @include media-breakpoint-down(xs) {
-    padding: $page-padding-xs;
-  }
+  padding: 16px 0;
 }
 
 .quotesLeft {

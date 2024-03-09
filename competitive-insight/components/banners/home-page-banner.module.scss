@@ -31,7 +31,7 @@
 
 .largeBtn {
   padding: 0.8rem 1.2rem;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem 0;
   display: inline-block;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   background-color: transparent;
@@ -133,6 +133,7 @@
 
   h1 {
     max-width: 100%;
+    letter-spacing: 1.5px;
 
     @include media-breakpoint-down(sm) {
       margin-top: 0;

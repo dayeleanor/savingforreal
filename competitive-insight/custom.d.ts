@@ -59,3 +59,11 @@ declare module "*.bmp" {
 }
 
 declare type HeaderTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+declare type BackgroundColour =
+  | "white"
+  | "light"
+  | "medium"
+  | "dark"
+  | "light-blue"
+  | "light-green";

@@ -1,11 +1,13 @@
+import { HeadingBlock } from "../components/content-blocks/heading-block";
 import Layout from "../components/layout";
-import Section from "../components/layout/section";
+import Section from "../internal/components/section";
 
 const AdvertisingDisclosurePage: React.FC = () => (
   <Layout title="Advertising Disclosure">
+    <HeadingBlock heading="Advertising Disclosure" centered={false} />
+
     <Section bgColor="white">
-      <Section.Header title="Advertising Disclosure" />
-      <Section.Rows>
+      <Section.GridContainer>
         <p>
           Competitive Insight (referred to as &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
           &ldquo;our&rdquo; throughout this page) furnishes links to various sources as
@@ -42,7 +44,7 @@ const AdvertisingDisclosurePage: React.FC = () => (
           are dedicated to upholding transparency and honesty with our clients and
           audience.
         </p>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
   </Layout>
 );

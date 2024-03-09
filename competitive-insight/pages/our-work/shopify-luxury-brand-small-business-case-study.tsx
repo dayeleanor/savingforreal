@@ -1,11 +1,14 @@
+import Article from "../../components/content-blocks/article";
+import { HeadingBlock } from "../../components/content-blocks/heading-block";
 import Layout from "../../components/layout";
-import Section from "../../components/layout/section";
+import Section from "../../internal/components/section";
 
 const ServicesPage: React.FC = () => (
   <Layout title="Services">
+    <HeadingBlock heading="Ecommerce SEO Project" tag="h1" background="light-blue" />
+
     <Section bgColor="white">
-      <Section.Header title="Ecommerce SEO Project" tag="h1" />
-      <Section.Rows>
+      <Article>
         <h2>Netting Conversions For A New Ecommerce Brand</h2>
         <p>
           Discover how Competitive Insight helped a new eCommerce brand net scores of
@@ -51,7 +54,7 @@ const ServicesPage: React.FC = () => (
           It all starts with competitive insight, email us today at
           hello@competitiveinsight.io to see how we can help your company’s growth.
         </p>
-      </Section.Rows>
+      </Article>
     </Section>
   </Layout>
 );

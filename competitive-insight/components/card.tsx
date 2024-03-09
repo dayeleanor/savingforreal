@@ -22,7 +22,7 @@ const Card: React.FC<ICardProps> = ({ children, icon, title, togglable = false }
   return (
     <li className={merge([styles.card, hidden && styles.hidden])}>
       {cardIcon && cardIcon}
-      <h3>{title}</h3>
+      <h4>{title}</h4>
       {children}
       {togglable && (
         <button

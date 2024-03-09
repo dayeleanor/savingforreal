@@ -1,0 +1,19 @@
+@import "../../styles/imports";
+
+.heading {
+  font-family: var(--header-font);
+  margin-bottom: 1rem;
+}
+
+.firstRow {
+  justify-self: flex-end;
+}
+
+.column {
+  max-width: 600px;
+
+  img {
+    max-width: 500px;
+    border-radius: 4px;
+  }
+}

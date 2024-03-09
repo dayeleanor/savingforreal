@@ -1,11 +1,12 @@
+import { HeadingBlock } from "../components/content-blocks/heading-block";
 import Layout from "../components/layout";
-import Section from "../components/layout/section";
+import Section from "../internal/components/section";
 
 const TermsConditionsPage: React.FC = () => (
   <Layout title="Terms & Conditions">
+    <HeadingBlock heading="Terms & Conditions" centered={false} />
     <Section bgColor="white">
-      <Section.Header title="Terms & Conditions" />
-      <Section.Rows>
+      <Section.GridContainer>
         <div>
           <h3>1. Acceptance of Terms</h3>
           <p>
@@ -93,7 +94,7 @@ const TermsConditionsPage: React.FC = () => (
             questions, please contact us before proceeding with our services.
           </p>
         </div>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
   </Layout>
 );

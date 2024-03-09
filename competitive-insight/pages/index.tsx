@@ -5,12 +5,14 @@ import PackageSvg from "../svgs/package-box.svg";
 import StartUpSvg from "../svgs/startup.svg";
 import AnalyticsSvg from "../svgs/analytics.svg";
 import TwoColumnBulletList from "../components/two-column-bullet-list";
-import Section from "../components/layout/section";
+import Section from "../internal/components/section";
 import StepsBulletList from "../components/steps-bullet-list";
 import BlogCard from "../components/blog/blog-card";
 import ButtonLink from "../components/button-link";
 import { getAllBlogPostCards, type IBlogPostCardData } from "../contentful/queries";
 import Testimonials from "../components/testimonials";
+import { StatementBlock } from "../components/content-blocks/statement-block";
+import Article from "../components/content-blocks/article";
 
 interface IHomePageProps {
   posts: IBlogPostCardData[];
@@ -19,22 +21,22 @@ interface IHomePageProps {
 const Home: React.FC<IHomePageProps> = ({ posts }) => (
   <Layout title="Home">
     <HomePageBanner />
+    <StatementBlock slim>
+      <p>
+        We assist ambitious brands in acquiring high-authority backlinks and utilizing the
+        power of SEO as the driving force behind their customer growth. Our expertise
+        enables brands spanning various industries, including B2B, B2C, FinTech, and SaaS
+        to achieve exponential organic growth.
+      </p>
+    </StatementBlock>
     <Section>
-      <Section.Header center>
-        <p>
-          We assist ambitious brands in acquiring high-authority backlinks and utilizing
-          the power of SEO as the driving force behind their customer growth. Our
-          expertise enables brands spanning various industries, including B2B, B2C,
-          FinTech, and SaaS to achieve exponential organic growth.
-        </p>
-      </Section.Header>
-      <Section.Rows>
+      <Section.GridContainer>
         <Testimonials />
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
 
     <Section bgColor="medium">
-      <Section.Rows>
+      <Section.GridContainer>
         <CardList>
           <CardList.Card
             title="Competitor Benchmarking"
@@ -68,7 +70,7 @@ const Home: React.FC<IHomePageProps> = ({ posts }) => (
             </p>
           </CardList.Card>
         </CardList>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
 
     <TwoColumnBulletList title="How We Can Help You" white>
@@ -108,7 +110,7 @@ const Home: React.FC<IHomePageProps> = ({ posts }) => (
       </TwoColumnBulletList.Item>
     </TwoColumnBulletList>
     <Section>
-      <Section.Rows>
+      <Section.GridContainer>
         <CardList borders="off" columns={3} align="left">
           <CardList.Card
             title="Training For Junior SEOs"
@@ -138,11 +140,11 @@ const Home: React.FC<IHomePageProps> = ({ posts }) => (
             {/* <ButtonLink href="/">Learn More</ButtonLink> */}
           </CardList.Card>
         </CardList>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
     <Section bgColor="white">
-      <Section.Rows columns={2}>
-        <div>
+      <Section.GridContainer columns={2}>
+        <Article>
           <h2>The 6 Guiding Principles We Apply To Ensure Organic Growth</h2>
           <p>
             We&apos;ve outlined the top level strategies for growth that result in rapid
@@ -157,7 +159,7 @@ const Home: React.FC<IHomePageProps> = ({ posts }) => (
             solutions and consultancy we&apos;ll help you to follow the steps we&apos;ve
             outlined for organic growth success.
           </p>
-        </div>
+        </Article>
         <StepsBulletList>
           <StepsBulletList.Step step={1} text="Conduct Detailed Competitor Analysis" />
           <StepsBulletList.Step step={2} text="Identify Your Key USPs" />
@@ -166,12 +168,12 @@ const Home: React.FC<IHomePageProps> = ({ posts }) => (
           <StepsBulletList.Step step={5} text="Monitor & Refine" />
           <StepsBulletList.Step step={6} text="Optimise Lead Conversion Rates" />
         </StepsBulletList>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
 
     <Section>
-      <Section.Header title="Recent Blog Posts" tag="h3" />
-      <Section.Rows columns={3}>
+      <Section.Header heading="Recent Blog Posts" tag="h3" />
+      <Section.GridContainer columns={3}>
         {posts.map((post) => (
           <BlogCard
             title={post.title}
@@ -185,7 +187,7 @@ const Home: React.FC<IHomePageProps> = ({ posts }) => (
             {post.excerpt}
           </BlogCard>
         ))}
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
   </Layout>
 );

@@ -1,11 +1,17 @@
+import Article from "../../components/content-blocks/article";
+import { HeadingBlock } from "../../components/content-blocks/heading-block";
 import Layout from "../../components/layout";
-import Section from "../../components/layout/section";
+import Section from "../../internal/components/section";
 
 const ServicesPage: React.FC = () => (
   <Layout title="Services">
+    <HeadingBlock
+      heading="Increasing B2B SaaS Signups"
+      tag="h1"
+      background="light-blue"
+    />
     <Section bgColor="white">
-      <Section.Header title="Increasing B2B SaaS Signups" tag="h1" />
-      <Section.Rows>
+      <Article>
         <h2>How We Increased Sign Ups By 297% For A Top B2B SAAS Startup</h2>
         <p>
           When an innovative technology Startup was approaching the task of how to grow
@@ -65,7 +71,7 @@ const ServicesPage: React.FC = () => (
           an additional million and clicks have increased by another 25,000 with average
           position and CTR ever-improving for relevant terms.
         </p>
-      </Section.Rows>
+      </Article>
     </Section>
   </Layout>
 );

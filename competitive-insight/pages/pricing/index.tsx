@@ -2,9 +2,10 @@ import BoldButtonLink from "../../components/bold-button-link";
 import CardList from "../../components/card-list";
 import Layout from "../../components/layout";
 import PageHeader from "../../components/layout/page-header";
-import Section from "../../components/layout/section";
+import Section from "../../internal/components/section";
 import PricingChart from "../../components/pricing/pricing-chart";
-import Statement from "../../components/typography";
+import { Statement } from "../../internal/components/section/statement";
+import { HeadingBlock } from "../../components/content-blocks/heading-block";
 
 const PricingPage: React.FC = ({}) => (
   <Layout title="Pricing">
@@ -14,15 +15,15 @@ const PricingPage: React.FC = ({}) => (
     />
 
     <Section bgColor="medium" className="wide no-padding">
-      <Section.Rows>
+      <Section.GridContainer>
         <PricingChart />
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
 
     <Section className="wide">
       <br className="xs-down" />
-      <Section.Header title="Competitive Insight - Market Research AddOns" center />
-      <Section.Rows>
+      <Section.GridContainer>
+        <Section.Header heading="Competitive Insight - Market Research AddOns" />
         <CardList columns={4} align="center">
           <CardList.Card title="Competitor Affiliate & Influencer Strategy Analysis">
             <Statement>$1,500 one off</Statement>
@@ -69,25 +70,22 @@ const PricingPage: React.FC = ({}) => (
             </footer>
           </CardList.Card>
         </CardList>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
-    <Section bgColor="white">
-      <Section.Header
-        center
-        title="Charity or not-for-profit? Get to 40% off listed pricing when you work with Competitive Insight"
+
+    <HeadingBlock heading="Charity or not-for-profit? Get to 40% off listed pricing when you work with Competitive Insight">
+      <BoldButtonLink
+        href="https://calendly.com/eleanorbennett/30min?month=2023-11"
+        size="large"
+        type="secondary"
       >
-        <BoldButtonLink
-          href="https://calendly.com/eleanorbennett/30min?month=2023-11"
-          size="large"
-          type="secondary"
-        >
-          Book a Call
-        </BoldButtonLink>
-      </Section.Header>
-    </Section>
+        Book a Call
+      </BoldButtonLink>
+    </HeadingBlock>
+
     {/* <Section>
-      <Section.Header title="FAQs" center />
-      <Section.Rows>
+      <Section.Header heading="FAQs" center />
+      <Section.GridContainer>
         <AccordionList>
           <Accordion>
             <Accordion.Summary>
@@ -122,7 +120,7 @@ const PricingPage: React.FC = ({}) => (
             </Accordion.Details>
           </Accordion>
         </AccordionList>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section> */}
   </Layout>
 );

@@ -1,9 +1,9 @@
-import Section from "../layout/section";
+import Section from "../../internal/components/section";
 import styles from "./blog-page-banner.module.scss";
 
 const BlogBanner: React.FC = () => (
   <Section>
-    <Section.Rows columns={2}>
+    <Section.GridContainer columns={2}>
       <header>
         <h1>Get Cutting-Edge, Marketing Tips In Your Inbox</h1>
       </header>
@@ -21,7 +21,7 @@ const BlogBanner: React.FC = () => (
           <input type="submit" value="Subscribe" className={styles.submitButton} />
         </form>
       </div>
-    </Section.Rows>
+    </Section.GridContainer>
   </Section>
 );
 

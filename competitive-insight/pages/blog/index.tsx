@@ -1,8 +1,8 @@
-import BlogBanner from "../../components/banners/blog-banner";
 import BlogCard from "../../components/blog/blog-card";
 import Layout from "../../components/layout";
-import Section from "../../components/layout/section";
+import Section from "../../internal/components/section";
 import { getAllBlogPostCards, IBlogPostCardData } from "../../contentful/queries";
+import { HeadingBlock } from "../../components/content-blocks/heading-block";
 
 interface IBlogPageProps {
   posts: IBlogPostCardData[];
@@ -11,10 +11,9 @@ interface IBlogPageProps {
 const BlogPage: React.FC<IBlogPageProps> = ({ posts }) => (
   <Layout title="Blog Posts">
     {/* <BlogBanner /> */}
-
+    <HeadingBlock heading="Recent Blog Posts" tag="h1" />
     <Section bgColor="white">
-      <Section.Header title="Recent Blog Posts" tag="h3" />
-      <Section.Rows columns={3}>
+      <Section.GridContainer columns={3}>
         {posts.map((post) => (
           <BlogCard
             title={post.title}
@@ -28,7 +27,7 @@ const BlogPage: React.FC<IBlogPageProps> = ({ posts }) => (
             {post.excerpt}
           </BlogCard>
         ))}
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
   </Layout>
 );

@@ -1,0 +1,66 @@
+@import "../../../styles/imports";
+
+.center {
+  text-align: center;
+
+  &.singleColumn {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  display: block;
+}
+
+.header {
+  .statement {
+    margin-top: $item-spacing;
+  }
+}
+
+.statement {
+  font-size: $fs-xl;
+  font-weight: $fw-medium;
+  max-width: $content-max-width;
+}
+
+.singleColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $item-spacing-md;
+  align-items: flex-start;
+
+  & > p,
+  & > header {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $item-spacing-md $section-padding-horizontal;
+
+  & > p {
+    margin: 0;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    gap: $item-spacing $section-padding-horizontal-md;
+  }
+
+  @include media-breakpoint-down(xs) {
+    gap: $item-spacing $section-padding-horizontal-xs;
+  }
+
+  @for $i from 1 through 8 {
+    @include media-breakpoint-up(md) {
+      &.col#{$i} {
+        grid-template-columns: repeat(#{$i}, auto);
+      }
+    }
+  }
+}

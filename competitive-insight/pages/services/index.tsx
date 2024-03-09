@@ -1,12 +1,12 @@
 import Layout from "../../components/layout";
-import Section from "../../components/layout/section";
+import Section from "../../internal/components/section";
 import gaImage from "../../assets/ga.png";
 import Image from "next/image";
 
 const ServicesPage: React.FC = () => (
   <Layout title="Services">
     <Section bgColor="white">
-      <Section.Rows columns={2}>
+      <Section.GridContainer columns={2}>
         <div>
           <h2>The 6 Guiding Principles We Apply To Ensure Organic Growth</h2>
           <p>
@@ -24,8 +24,8 @@ const ServicesPage: React.FC = () => (
           </p>
         </div>
         <Image src={gaImage} alt="ga screenshot" />
-      </Section.Rows>
-      <Section.Rows columns={2}>
+      </Section.GridContainer>
+      <Section.GridContainer columns={2}>
         <Image src={gaImage} alt="ga screenshot" />
         <div>
           <h2>The 6 Guiding Principles We Apply To Ensure Organic Growth</h2>
@@ -43,7 +43,7 @@ const ServicesPage: React.FC = () => (
             outlined for organic growth success.
           </p>
         </div>
-      </Section.Rows>
+      </Section.GridContainer>
     </Section>
   </Layout>
 );

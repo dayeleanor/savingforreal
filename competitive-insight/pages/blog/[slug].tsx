@@ -7,8 +7,8 @@ import {
 import { ParsedUrlQuery } from "querystring";
 import BlogPageHeaderInfo from "../../components/blog/blog-page-header-info";
 import Layout from "../../components/layout";
-import Article from "../../components/layout/article";
-import Section from "../../components/layout/section";
+import Article from "../../components/content-blocks/article";
+import Section from "../../internal/components/section";
 import {
   getBlogPostBySlug,
   getBlogPostSlugs,
@@ -22,20 +22,17 @@ interface IBlogPageProps {
 const BlogPostPage: React.FC<IBlogPageProps> = ({ post }) => (
   <Layout title={post.title}>
     <Section>
-      <Section.Header title={post.title} tag="h1">
+      <Section.Header heading={post.title} tag="h1">
         <p>{post.excerpt}</p>
         <BlogPageHeaderInfo post={post} />
       </Section.Header>
     </Section>
     <Section bgColor="white">
-      <Section.Rows>
-        <Article>
-          <Section.Markdown includeToC={false}>{post.introduction}</Section.Markdown>
-
-          {post.introduction && <br />}
-          <Section.Markdown includeToC>{post.body}</Section.Markdown>
-        </Article>
-      </Section.Rows>
+      <Article>
+        <Section.Markdown includeToC={false}>{post.introduction}</Section.Markdown>
+        {post.introduction && <br />}
+        <Section.Markdown includeToC>{post.body}</Section.Markdown>
+      </Article>
     </Section>
   </Layout>
 );

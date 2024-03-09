@@ -1,6 +1,10 @@
 @import "../styles/imports";
 
 .buttonLink {
+  p + & {
+    margin-top: $item-spacing;
+  }
+
   display: inline-block;
   background-color: transparent;
   position: relative;
@@ -10,7 +14,6 @@
   user-select: none;
   vertical-align: middle;
   font-weight: $fw-medium;
-  font-size: $fs-sm;
   min-width: 64px;
   padding: 6px 8px;
   border-radius: 4px;
